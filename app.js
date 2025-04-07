@@ -29,10 +29,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
 app.use(cookieParser()); 
 
+console.log(process.env.FRONTEND_URL);
+
+
 app.use(cors({
     origin: process.env.FRONTEND_URL||"http://localhost:5173",
     credentials: true,
-    secure:true
   }));
 
 

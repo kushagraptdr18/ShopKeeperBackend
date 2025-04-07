@@ -35,11 +35,7 @@ exports.signup = async (req, res) => {
       );
   
       
-      res.cookie("token", token,{
-        httpOnly: true,  // Prevents client-side access
-        secure: true,    // Ensures cookies are sent only over HTTPS
-        sameSite: "strict"
-      });
+      res.cookie("token", token);
   
       res.status(200).json({ 
         success: true, 
