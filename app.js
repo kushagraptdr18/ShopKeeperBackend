@@ -30,9 +30,9 @@ app.use(morgan("tiny"));
 app.use(cookieParser()); 
 
 app.use(cors({
-    origin: true,
-    // methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    origin: process.env.FRONTEND_URL||"http://localhost:5173",
     credentials: true,
+    secure:true
   }));
 
 
